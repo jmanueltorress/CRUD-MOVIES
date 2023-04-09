@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from 'react'
+import { Link } from 'react-router-dom'
 
 
 
@@ -13,6 +14,13 @@ const Peliculas = () => {
 
     return (
         <div>
+            <div class="flex justify-end">
+                <Link to="crear">
+                <button class="bg-green-500 hover:bg-green-700 text-white font-bold py-2 px-4 rounded">
+                    Nueva pelicula
+                </button>
+                </Link>
+            </div>
 
             <div className="relative overflow-x-auto shadow-md sm:rounded-lg">
                 <table className="w-full text-sm text-left text-gray-500 dark:text-gray-400">
@@ -36,26 +44,26 @@ const Peliculas = () => {
                         </tr>
                     </thead>
                     <tbody>
-                    
+
                         {peliculas.map(pelicula => {
                             return (
                                 <tr className="bg-white border-b dark:bg-gray-900 dark:border-gray-700">
-                                <th scope="row" className="px-6 py-4 font-medium text-gray-900 whitespace-nowrap dark:text-white">
-                                    {pelicula.titulo}
-                                </th>
-                                <td className="px-6 py-4">
-                                    {pelicula.anio}
-                                </td>
-                                <td className="px-6 py-4">
-                                    {pelicula.sinopsis}
-                                </td>
-                                <td className="px-6 py-4">
-                                    {pelicula.categorias.join(' - ')}
-                                </td>
-                                <td className="px-6 py-4">
-                                    <a href="#" className="font-medium text-blue-600 dark:text-blue-500 hover:underline">Edit</a>
-                                </td>
-                            </tr>
+                                    <th scope="row" className="px-6 py-4 font-medium text-gray-900 whitespace-nowrap dark:text-white">
+                                        {pelicula.titulo}
+                                    </th>
+                                    <td className="px-6 py-4">
+                                        {pelicula.anio}
+                                    </td>
+                                    <td className="px-6 py-4">
+                                        {pelicula.sinopsis}
+                                    </td>
+                                    <td className="px-6 py-4">
+                                        {pelicula.categorias.join(' - ')}
+                                    </td>
+                                    <td className="px-6 py-4">
+                                        <a href="#" className="font-medium text-blue-600 dark:text-blue-500 hover:underline">Edit</a>
+                                    </td>
+                                </tr>
                             )
                         })}
 

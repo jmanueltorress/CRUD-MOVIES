@@ -9,6 +9,7 @@ import NavBar from './NavBar';
 import Peliculas from './Peliculas';
 import Resenas from './Resenas';
 import Categorias from './Categorias';
+import CrearPelicula from './CrearPelicula';
 
 const router = createBrowserRouter([
   {
@@ -18,6 +19,10 @@ const router = createBrowserRouter([
       {
         path: "/peliculas",
         element: <Peliculas />,
+      },
+      {
+        path: "/peliculas/crear",
+        element: <CrearPelicula></CrearPelicula>
       },
       {
         path: "/categorias",
