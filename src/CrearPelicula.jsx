@@ -42,7 +42,7 @@ const CrearPelicula = () => {
 
   }
   return (
-    <div className="container mx-auto shadow-[rgba(0,_0,_0,_0.24)_5px_7px_8px] mt-4 p-6">
+    <div className="container mx-auto shadow-[rgba(0,_0,_0,_0.24)_0px_3px_8px] mt-4 p-6">
        <h1 className='text-xl font-bold'>Crear nueva pelicula</h1>
 <form className='pt-4' onSubmit={submitHandler}>
   <div className="mb-6">
