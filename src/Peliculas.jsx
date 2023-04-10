@@ -24,10 +24,10 @@ const Peliculas = () => {
         }
     }
 
-    const traerDatos = () =>{
+    const traerDatos = () => {
         fetch(URL).then(blob => blob.json()).then(data => setPeliculas(data));
     }
- 
+
     const [peliculas, setPeliculas] = useState([])
     useEffect(() => {
         traerDatos();
@@ -36,17 +36,17 @@ const Peliculas = () => {
     const eliminarPelicula = (id) => {
 
         axios.delete(`https://team-14-backend-production.up.railway.app/peliculas/${id}`)
-        .then(response => {
-            mostrarNotificacion('Pelicula eliminada', 'success')
-            traerDatos()
-            console.log(response.data); // Aquí puedes manejar la respuesta del servidor
-        })
-        .catch(error => {
-            mostrarNotificacion('Error al eliminar la pelicula', 'error')
-            console.log(error); // Aquí puedes manejar el error en caso de que ocurra
-        });
+            .then(response => {
+                mostrarNotificacion('Pelicula eliminada', 'success')
+                traerDatos()
+                console.log(response.data); // Aquí puedes manejar la respuesta del servidor
+            })
+            .catch(error => {
+                mostrarNotificacion('Error al eliminar la pelicula', 'error')
+                console.log(error); // Aquí puedes manejar el error en caso de que ocurra
+            });
 
-        
+
     }
     return (
 

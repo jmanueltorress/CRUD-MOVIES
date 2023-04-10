@@ -1,8 +1,9 @@
 import React, { useEffect, useState } from 'react'
+import { Link } from 'react-router-dom'
 
 const Categorias = () => {
-const URL = 'https://team-14-backend-production.up.railway.app/categorias'
-  const [categorias, setCategorias] = useState([])
+    const URL = 'https://team-14-backend-production.up.railway.app/categorias'
+    const [categorias, setCategorias] = useState([])
 
   useEffect(() => {
     fetch(URL).then(blob => blob.json()).then(data => setCategorias(data))
@@ -55,8 +56,8 @@ const URL = 'https://team-14-backend-production.up.railway.app/categorias'
     </table>
 </div>
 
-    </div>
-  )
+        </div>
+    )
 }
 
 export default Categorias

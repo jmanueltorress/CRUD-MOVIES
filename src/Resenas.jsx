@@ -1,8 +1,9 @@
 import React, { useEffect, useState } from 'react'
+import { Link } from 'react-router-dom';
 
 const Resenas = () => {
-  const URL = 'https://team-14-backend-production.up.railway.app/resenas';
-  const [resenas, setResenas] = useState([])
+    const URL = 'https://team-14-backend-production.up.railway.app/resenas';
+    const [resenas, setResenas] = useState([])
 
   useEffect(() => {
     fetch(URL).then(blob => blob.json()).then(data => setResenas(data))
@@ -62,8 +63,8 @@ const Resenas = () => {
     </table>
 </div>
 
-    </div>
-  )
+        </div>
+    )
 }
 
 export default Resenas
