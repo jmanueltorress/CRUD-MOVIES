@@ -9,18 +9,18 @@ const URL = 'https://team-14-backend-production.up.railway.app/categorias'
   }, [])
   
   return (
-    <div className="container mx-auto shadow-[rgba(0,_0,_0,_0.24)_0px_3px_8px] mt-4">
+    <div className="container mx-auto shadow-[rgba(0,_0,_0,_0.24)_0px_3px_8px] mt-4 ">
       <div className="flex justify-between items-center">
-                <h1 className='text-xl font-bold'>Categorias</h1>
+                <h1 className='text-xl font-bold ml-3'>CATEGORIAS</h1>
                 
-                    <button className="bg-green-500 hover:bg-green-700 text-white font-bold py-2 px-4 rounded">
-                        Nueva categoria
+                    <button className="bg-green-500 hover:bg-green-700 text-white font-bold py-2 px-4 rounded m-7">
+                    Añadir +
                     </button>
              
             </div>
-<div class="relative overflow-x-auto shadow-md sm:rounded-lg">
+<div class="relative overflow-x-auto shadow-md sm:rounded-lg mb-8">
     <table class="w-full text-sm text-left text-gray-500 dark:text-gray-400">
-        <thead class="text-xs text-gray-700 uppercase bg-gray-50 dark:bg-gray-700 dark:text-gray-400">
+        <thead class="text-xs text-gray-700 uppercase bg-gray-50 dark:bg-gray-700 dark:text-gray-300">
             <tr>
                 <th scope="col" class="px-6 py-3">
                     Nombre Categoria

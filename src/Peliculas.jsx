@@ -53,17 +53,18 @@ const Peliculas = () => {
         <div className="container mx-auto shadow-[rgba(0,_0,_0,_0.24)_0px_3px_8px] mt-4">
 
 <div className="flex justify-between items-center">
-                <h1 className='text-xl font-bold'>Peliculas</h1>
+                <h1 className='text-xl font-bold ml-3'>PELICULAS</h1>
                 <Link to="crear">
-                    <button className="bg-green-500 hover:bg-green-700 text-white font-bold py-2 px-4 rounded">
-                        Nueva pelicula
+                    <button className="bg-green-500 hover:bg-green-700 text-white font-bold py-2 px-4 rounded m-7">
+                        Añadir +
                     </button>
+                    
                 </Link>
             </div>
 
-            <div className="relative overflow-x-auto shadow-md sm:rounded-lg">
+            <div className="relative overflow-x-auto shadow-md sm:rounded-lg mb-8">
                 <table className="w-full text-sm text-left text-gray-500 dark:text-gray-400">
-                    <thead className="text-xs text-gray-700 uppercase bg-gray-50 dark:bg-gray-700 dark:text-gray-400">
+                    <thead className="text-xs text-gray-700 uppercase bg-gray-50 dark:bg-gray-700 dark:text-gray-300">
                         <tr>
                             <th scope="col" className="px-6 py-3">
                                 Titulo
@@ -100,8 +101,8 @@ const Peliculas = () => {
                                         {pelicula.categorias.join(' - ')}
                                     </td>
                                     <td className="px-6 py-4 flex">
-                                        <div ><Link to={`/peliculas/${pelicula.id_pelicula}`}><box-icon name='edit'></box-icon></Link></div>
-                                        <div className='inline' onClick={() => { eliminarPelicula(pelicula.id_pelicula) }}><box-icon name='trash' ></box-icon></div>
+                                        <div ><Link to={`/peliculas/${pelicula.id_pelicula}`}><box-icon name='edit' color='#fff'></box-icon></Link></div>
+                                        <div className='inline' onClick={() => { eliminarPelicula(pelicula.id_pelicula) }}><box-icon name='trash' color='#c90000' ></box-icon></div>
                                     </td>
                                 </tr>
                             )
