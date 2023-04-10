@@ -10,6 +10,7 @@ import Peliculas from './Peliculas';
 import Resenas from './Resenas';
 import Categorias from './Categorias';
 import CrearPelicula from './CrearPelicula';
+import EditarPelicula from './EditarPelicula';
 
 const router = createBrowserRouter([
   {
@@ -23,6 +24,10 @@ const router = createBrowserRouter([
       {
         path: "/peliculas/crear",
         element: <CrearPelicula></CrearPelicula>
+      },
+      {
+        path: "/peliculas/:id",
+        element: <EditarPelicula></EditarPelicula>
       },
       {
         path: "/categorias",
