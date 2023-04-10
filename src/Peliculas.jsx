@@ -24,10 +24,10 @@ const Peliculas = () => {
         }
     }
 
-    const traerDatos = () =>{
+    const traerDatos = () => {
         fetch(URL).then(blob => blob.json()).then(data => setPeliculas(data));
     }
- 
+
     const [peliculas, setPeliculas] = useState([])
     useEffect(() => {
         traerDatos();
@@ -36,27 +36,30 @@ const Peliculas = () => {
     const eliminarPelicula = (id) => {
 
         axios.delete(`https://team-14-backend-production.up.railway.app/peliculas/${id}`)
-        .then(response => {
-            mostrarNotificacion('Pelicula eliminada', 'success')
-            traerDatos()
-            console.log(response.data); // Aquí puedes manejar la respuesta del servidor
-        })
-        .catch(error => {
-            mostrarNotificacion('Error al eliminar la pelicula', 'error')
-            console.log(error); // Aquí puedes manejar el error en caso de que ocurra
-        });
+            .then(response => {
+                mostrarNotificacion('Pelicula eliminada', 'success')
+                traerDatos()
+                console.log(response.data); // Aquí puedes manejar la respuesta del servidor
+            })
+            .catch(error => {
+                mostrarNotificacion('Error al eliminar la pelicula', 'error')
+                console.log(error); // Aquí puedes manejar el error en caso de que ocurra
+            });
 
-        
+
     }
     return (
 
         <div className="container mx-auto shadow-[rgba(0,_0,_0,_0.24)_0px_3px_8px] mt-4">
 
-<div className="flex justify-between items-center">
+            <div className="flex justify-between items-center">
                 <h1 className='text-xl font-bold'>Peliculas</h1>
                 <Link to="crear">
                     <button className="bg-green-500 hover:bg-green-700 text-white font-bold py-2 px-4 rounded">
-                        Nueva pelicula
+                        <div className="flex items-center gap-2">
+                            <box-icon color="white" name='plus-circle'></box-icon>
+                            <span>Nueva pelicula</span>
+                        </div>
                     </button>
                 </Link>
             </div>
@@ -100,8 +103,8 @@ const Peliculas = () => {
                                         {pelicula.categorias.join(' - ')}
                                     </td>
                                     <td className="px-6 py-4 flex">
-                                        <div ><Link to={`/peliculas/${pelicula.id_pelicula}`}><box-icon name='edit'></box-icon></Link></div>
-                                        <div className='inline' onClick={() => { eliminarPelicula(pelicula.id_pelicula) }}><box-icon name='trash' ></box-icon></div>
+                                        <div ><Link to={`/peliculas/${pelicula.id_pelicula}`}><box-icon animation='tada-hover' color="#244ED8" name='edit'></box-icon></Link></div>
+                                        <div className='inline' onClick={() => { eliminarPelicula(pelicula.id_pelicula) }}><box-icon animation='tada-hover' color="#FF6B6B" name='trash' ></box-icon></div>
                                     </td>
                                 </tr>
                             )
