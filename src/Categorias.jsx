@@ -1,12 +1,48 @@
 import React, { useEffect, useState } from 'react'
 import { Link } from 'react-router-dom'
+import axios from 'axios';
+import { toast, ToastContainer } from 'react-toastify';
+import "react-toastify/dist/ReactToastify.css";
 
 const Categorias = () => {
     const URL = 'https://team-14-backend-production.up.railway.app/categorias'
     const [categorias, setCategorias] = useState([])
 
+    const traerDatos = () => {
+        axios.get(URL).then(response => setCategorias(response.data))
+    }
+
+    const mostrarNotificacion = (message, type) => {
+        if (type === 'success') {
+            toast.success(message, {
+                position: toast.POSITION.BOTTOM_CENTER
+            });
+        } else if (type === 'error') {
+            toast.error(message, {
+                position: toast.POSITION.BOTTOM_CENTER
+            });
+        }
+    }
+
+
+    const eliminarCategoria = (id) => {
+
+        axios.delete(`https://team-14-backend-production.up.railway.app/categorias/${id}`)
+            .then(response => {
+                mostrarNotificacion('Categoria eliminada', 'success')
+                traerDatos()
+                console.log(response.data); // Aquí puedes manejar la respuesta del servidor
+            })
+            .catch(error => {
+                mostrarNotificacion('Error al eliminar la categoria', 'error')
+                console.log(error); // Aquí puedes manejar el error en caso de que ocurra
+            });
+           
+
+    }
+
     useEffect(() => {
-        fetch(URL).then(blob => blob.json()).then(data => setCategorias(data))
+        traerDatos();
     }, [])
 
     return (
@@ -14,12 +50,14 @@ const Categorias = () => {
             <div className="flex justify-between items-center">
                 <h1 className='text-xl font-bold'>Categorias</h1>
 
+                <Link to="crear">
                 <button className="bg-green-500 hover:bg-green-700 text-white font-bold py-2 px-4 rounded">
                         <div className="flex items-center gap-2">
                             <box-icon color="white" name='plus-circle'></box-icon>
                             <span>Nueva categoria</span>
                         </div>
                     </button>
+                </Link>
 
             </div>
             <div class="relative overflow-x-auto shadow-md sm:rounded-lg">
@@ -49,8 +87,8 @@ const Categorias = () => {
                                             {categoria.descripcion}
                                         </td>
                                         <td className="px-6 py-4 flex">
-                                            <div ><Link ><box-icon animation='tada-hover' color="#244ED8" name='edit'></box-icon></Link></div>
-                                            <div className='inline' ><box-icon animation='tada-hover' color="#FF6B6B" name='trash' ></box-icon></div>
+                                            <div ><Link to={`/categorias/${categoria.id_categoria}`}><box-icon animation='tada-hover' color="#244ED8" name='edit'></box-icon></Link></div>
+                                            <div onClick={()=>{eliminarCategoria(categoria.id_categoria)}} className='inline' ><box-icon animation='tada-hover' color="#FF6B6B" name='trash' ></box-icon></div>
                                         </td>
                                     </tr>
                                 )
@@ -59,6 +97,18 @@ const Categorias = () => {
                     </tbody>
                 </table>
             </div>
+            <ToastContainer
+                position="bottom-center"
+                autoClose={5000}
+                hideProgressBar={false}
+                newestOnTop={false}
+                closeOnClick
+                rtl={false}
+                pauseOnFocusLoss
+                draggable
+                pauseOnHover
+                theme="dark"
+            />
 
         </div>
     )

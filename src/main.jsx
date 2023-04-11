@@ -11,6 +11,8 @@ import Resenas from './Resenas';
 import Categorias from './Categorias';
 import CrearPelicula from './CrearPelicula';
 import EditarPelicula from './EditarPelicula';
+import CrearCategoria from './CrearCategoria';
+import EditarCategoria from './EditarCategoria';
 
 const router = createBrowserRouter([
   {
@@ -23,15 +25,24 @@ const router = createBrowserRouter([
       },
       {
         path: "/peliculas/crear",
-        element: <CrearPelicula></CrearPelicula>
+        element: <CrearPelicula/>
       },
       {
         path: "/peliculas/:id",
-        element: <EditarPelicula></EditarPelicula>
+        element: <EditarPelicula/>
       },
       {
         path: "/categorias",
         element: <Categorias />,
+      },
+      {
+        path: "/categorias/crear",
+        element: <CrearCategoria/>
+      },
+      
+      {
+        path: "/categorias/:id",
+        element: <EditarCategoria/>
       },
       {
         path: "/resenas",

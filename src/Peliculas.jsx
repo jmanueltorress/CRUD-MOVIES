@@ -25,7 +25,7 @@ const Peliculas = () => {
     }
 
     const traerDatos = () => {
-        fetch(URL).then(blob => blob.json()).then(data => setPeliculas(data));
+        axios.get(URL).then(response => setPeliculas(response.data));
     }
 
     const [peliculas, setPeliculas] = useState([])

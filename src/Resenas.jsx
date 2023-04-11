@@ -15,12 +15,14 @@ const Resenas = () => {
             <div className="flex justify-between items-center">
                 <h1 className='text-xl font-bold'>Reseñas</h1>
 
+                <Link to="crear">
                 <button className="bg-green-500 hover:bg-green-700 text-white font-bold py-2 px-4 rounded">
                         <div className="flex items-center gap-2">
                             <box-icon color="white" name='plus-circle'></box-icon>
                             <span>Nueva reseña</span>
                         </div>
                     </button>
+                </Link>
             </div>
             <div class="relative overflow-x-auto shadow-md sm:rounded-lg">
                 <table class="w-full text-sm text-left text-gray-500 dark:text-gray-400">
