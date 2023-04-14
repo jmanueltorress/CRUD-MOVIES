@@ -1,14 +1,53 @@
 import React, { useEffect, useState } from 'react'
 import { Link } from 'react-router-dom';
+import axios from 'axios'
+import 'boxicons'
+import { toast, ToastContainer } from 'react-toastify';
+import "react-toastify/dist/ReactToastify.css";
+
+
 
 const Resenas = () => {
     const URL = 'https://team-14-backend-production.up.railway.app/resenas';
     const [resenas, setResenas] = useState([])
 
-    useEffect(() => {
+    const traerDatos = () =>{
         fetch(URL).then(blob => blob.json()).then(data => setResenas(data))
+    }
+
+    useEffect(() => {
+        traerDatos();
 
     }, [])
+
+    const eliminarResena = (id) => {
+
+        axios.delete(`https://team-14-backend-production.up.railway.app/resenas/${id}`)
+            .then(response => {
+                mostrarNotificacion('Reseña eliminada', 'success')
+                traerDatos()
+                console.log(response)
+            })
+            .catch(error => {
+                mostrarNotificacion('Error al eliminar la reseña', 'error')
+                console.log(error)
+            });
+
+
+    }
+
+    const mostrarNotificacion = (message, type) => {
+        if (type === 'success') {
+            toast.success(message, {
+                position: toast.POSITION.BOTTOM_CENTER
+            });
+        } else if (type === 'error') {
+            toast.error(message, {
+                position: toast.POSITION.BOTTOM_CENTER
+            });
+        }
+    }
+    
 
     return (
         <div className="container mx-auto shadow-[rgba(0,_0,_0,_0.24)_0px_3px_8px] mt-4">
@@ -58,7 +97,7 @@ const Resenas = () => {
                                         </td>
                                         <td className="px-6 py-4 flex">
                                             <div ><Link ><box-icon animation='tada-hover' color="#244ED8" name='edit'></box-icon></Link></div>
-                                            <div className='inline' ><box-icon animation='tada-hover' color="#FF6B6B" name='trash' ></box-icon></div>
+                                            <div onClick={()=>{eliminarResena(resena.id_resenia)}} className='inline' ><box-icon animation='tada-hover' color="#FF6B6B" name='trash' ></box-icon></div>
                                         </td>
                                     </tr>
                                 )
@@ -67,6 +106,19 @@ const Resenas = () => {
                     </tbody>
                 </table>
             </div>
+
+            <ToastContainer
+                position="bottom-center"
+                autoClose={5000}
+                hideProgressBar={false}
+                newestOnTop={false}
+                closeOnClick
+                rtl={false}
+                pauseOnFocusLoss
+                draggable
+                pauseOnHover
+                theme="dark"
+            />
 
         </div>
     )
