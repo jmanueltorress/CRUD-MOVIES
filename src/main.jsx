@@ -14,6 +14,7 @@ import EditarPelicula from './EditarPelicula';
 import CrearCategoria from './CrearCategoria';
 import EditarCategoria from './EditarCategoria';
 import CrearResena from './CrearResena';
+import EditarResena from './EditarResena';
 
 const router = createBrowserRouter([
   {
@@ -52,6 +53,10 @@ const router = createBrowserRouter([
       {
         path: "/resenas/crear",
         element: <CrearResena/>,
+      },
+      {
+        path: "/resenas/:id",
+        element: <EditarResena/>,
       },
     ],
   },
