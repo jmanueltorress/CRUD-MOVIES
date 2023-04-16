@@ -96,7 +96,7 @@ const Resenas = () => {
                                             {resena.comentario}
                                         </td>
                                         <td className="px-6 py-4 flex">
-                                            <div ><Link ><box-icon animation='tada-hover' color="#244ED8" name='edit'></box-icon></Link></div>
+                                            <div ><Link to={`/resenas/${resena.id_resenia}`}><box-icon animation='tada-hover' color="#244ED8" name='edit'></box-icon></Link></div>
                                             <div onClick={()=>{eliminarResena(resena.id_resenia)}} className='inline' ><box-icon animation='tada-hover' color="#FF6B6B" name='trash' ></box-icon></div>
                                         </td>
                                     </tr>
