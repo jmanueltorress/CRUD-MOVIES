@@ -3,6 +3,8 @@ import axios from 'axios';
 import { toast, ToastContainer } from 'react-toastify';
 import "react-toastify/dist/ReactToastify.css";
 import { useParams } from 'react-router-dom';
+import EstrellasRating from './EstrellasRating';
+
 const EditarResena = () => {
     const URL = 'https://team-14-backend-production.up.railway.app';
     const { id } = useParams();
@@ -60,21 +62,29 @@ const EditarResena = () => {
     }
 
     return (
-        <div>
-            <h1>Editar reseña</h1>
-            <form onSubmit={handleSubmit}>
+      <div className="container mx-auto shadow-[rgba(0,_0,_0,_0.24)_0px_3px_8px] mt-4 p-6">
+      <h1 className='text-xl font-bold'>Editar pelicula</h1>
+         
+            <form onSubmit={handleSubmit} className='pt-4'>
                 {/* Aquí puedes agregar campos de formulario para editar la reseña */}
+                <div className="mb-6">
+                <label htmlFor="titulo" className="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Titulo</label>
                 <input
                     type="text"
                     name="titulo"
                     value={resena.titulo}
                     onChange={handleChange}
+                    className="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
                 />
+                </div>
 
+                <div className="mb-6">
+                <label htmlFor="puntuacion" className="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Puntuacion</label>
                 <select data-te-select-init
                 onChange={handleChange}
                 id="puntuacion" name='puntuacion'
                 value={resena.puntuacion}
+                className="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
                 >
                     <option value="1">Uno</option>
                     <option value="2">Dos</option>
@@ -82,15 +92,21 @@ const EditarResena = () => {
                     <option value="4">Cuatro</option>
                     <option value="5">Cinco</option>
                 </select>
+                <EstrellasRating numero={resena.puntuacion}/>
+                </div>
 
-                <input
+                <div className="mb-6">
+                <label htmlFor="comentario" className="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Comentario</label>
+                <textarea
                     type="text"
                     name="comentario"
                     value={resena.comentario}
                     onChange={handleChange}
+                    id="comentario"  rows="4" className="block p-2.5 w-full text-sm text-gray-900 bg-gray-50 rounded-lg border border-gray-300 focus:ring-blue-500 focus:border-blue-500 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" placeholder="Deja un comentario..."
                 />
-
-                <button type="submit">Guardar cambios</button>
+                </div>
+     
+                <button type="submit" className="text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm w-full sm:w-auto px-5 py-2.5 text-center dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800">Guardar cambios</button>
             </form>
             <ToastContainer
                 position="bottom-center"
