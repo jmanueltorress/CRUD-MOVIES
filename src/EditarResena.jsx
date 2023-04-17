@@ -63,7 +63,7 @@ const EditarResena = () => {
 
     return (
       <div className="container mx-auto shadow-[rgba(0,_0,_0,_0.24)_0px_3px_8px] mt-4 p-6">
-      <h1 className='text-xl font-bold'>Editar pelicula</h1>
+      <h1 className='text-xl font-bold'>Editar reseña</h1>
          
             <form onSubmit={handleSubmit} className='pt-4'>
                 {/* Aquí puedes agregar campos de formulario para editar la reseña */}
