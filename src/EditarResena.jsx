@@ -68,7 +68,7 @@ const EditarResena = () => {
             <form onSubmit={handleSubmit} className='pt-4'>
                 {/* Aquí puedes agregar campos de formulario para editar la reseña */}
                 <div className="mb-6">
-                <label htmlFor="titulo" className="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Titulo</label>
+                <label htmlFor="titulo" className="block mb-2 text-sm font-medium text-gray-900 dark:text-black">Titulo</label>
                 <input
                     type="text"
                     name="titulo"
@@ -79,7 +79,7 @@ const EditarResena = () => {
                 </div>
 
                 <div className="mb-6">
-                <label htmlFor="puntuacion" className="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Puntuacion</label>
+                <label htmlFor="puntuacion" className="block mb-2 text-sm font-medium text-gray-900 dark:text-black">Puntuacion</label>
                 <select data-te-select-init
                 onChange={handleChange}
                 id="puntuacion" name='puntuacion'
@@ -96,7 +96,7 @@ const EditarResena = () => {
                 </div>
 
                 <div className="mb-6">
-                <label htmlFor="comentario" className="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Comentario</label>
+                <label htmlFor="comentario" className="block mb-2 text-sm font-medium text-gray-900 dark:text-black">Comentario</label>
                 <textarea
                     type="text"
                     name="comentario"
