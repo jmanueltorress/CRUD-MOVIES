@@ -70,13 +70,13 @@ const EditarCategoria = () => {
             <h1 className='text-xl font-bold'>Editar categoria</h1>
             <form className='pt-4' onSubmit={submitHandler}>
                 <div className="mb-6">
-                    <label htmlFor="nombre" className="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Titulo</label>
+                    <label htmlFor="nombre" className="block mb-2 text-sm font-medium text-gray-900 dark:text-black">Titulo</label>
                     <input type="text" id="nombre" name="nombre" className="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" placeholder="Titulo pelicula" required value={categoria.nombre} onChange={(e) => setCategoria({ ...categoria, nombre: e.target.value })}
                     ></input>
                 </div>
 
                 <div className="mb-6">
-                    <label htmlFor="descripcion" className="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Sinopsis</label>
+                    <label htmlFor="descripcion" className="block mb-2 text-sm font-medium text-gray-900 dark:text-black">Sinopsis</label>
                     <textarea id="descripcion" name="descripcion" rows="4" className="block p-2.5 w-full text-sm text-gray-900 bg-gray-50 rounded-lg border border-gray-300 focus:ring-blue-500 focus:border-blue-500 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" placeholder="Deja un comentario..." value={categoria.descripcion} onChange={(e) => setCategoria({ ...categoria, descripcion: e.target.value })}
                     ></textarea>
                 </div>
