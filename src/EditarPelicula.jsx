@@ -68,17 +68,17 @@ const EditarPelicula = () => {
       <h1 className='text-xl font-bold'>Editar pelicula</h1>
       <form className='pt-4' onSubmit={submitHandler}>
         <div className="mb-6">
-          <label htmlFor="titulo" className="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Titulo</label>
+          <label htmlFor="titulo" className="block mb-2 text-sm font-medium text-gray-900 dark:text-black">Titulo</label>
           <input type="text" id="titulo" name="titulo" className="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" placeholder="Titulo pelicula" required value={pelicula.titulo}   onChange={(e) => setPelicula({...pelicula, titulo: e.target.value})}
 ></input>
         </div>
         <div className="mb-6">
-          <label htmlFor="anio" className="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Año</label>
+          <label htmlFor="anio" className="block mb-2 text-sm font-medium text-gray-900 dark:text-black">Año</label>
           <input type="number" id="anio" name='anio' min="1900" max="2099" placeholder="Año de estreno pelicula" className="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" required value={pelicula.anio}   onChange={(e) => setPelicula({...pelicula, anio: e.target.value})}
 ></input>
         </div>
         <div className="mb-6">
-          <label htmlFor="sinopsis" className="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Sinopsis</label>
+          <label htmlFor="sinopsis" className="block mb-2 text-sm font-medium text-gray-900 dark:text-black">Sinopsis</label>
           <textarea id="sinopsis" name="sinopsis" rows="4" className="block p-2.5 w-full text-sm text-gray-900 bg-gray-50 rounded-lg border border-gray-300 focus:ring-blue-500 focus:border-blue-500 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" placeholder="Deja un comentario..." value={pelicula.sinopsis}   onChange={(e) => setPelicula({...pelicula, sinopsis: e.target.value})}
 ></textarea>
         </div>
