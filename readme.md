@@ -11,3 +11,13 @@ Para iniciar el servidor...
 ```sh
 npm run dev
 ```
+
+#### Demo :
+ https://main--polite-pudding-50f172.netlify.app/categorias 
+
+
+## Desktop Design
+![](https://github.githubassets.com/images/modules/logos_page/https://github.com/jmanueltorress/CRUD-MOVIES/tree/main/assets/ux-demo.png)
+
+## Prototype Final
+![](https://github.githubassets.com/images/modules/logos_page/https://github.com/jmanueltorress/CRUD-MOVIES/tree/main/assets/demofinal.png)
