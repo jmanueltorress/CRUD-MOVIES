@@ -1,5 +1,5 @@
 ## Instalacion
-Instala las depencias de la aplicacion
+Instala las depencias de la aplicación
 
 ```sh
 cd team-14-frontend
@@ -20,4 +20,8 @@ npm run dev
 ![](https://github.com/jmanueltorress/CRUD-MOVIES/blob/main/assets/ux-demo.png)
 
 ## Prototype Final
+<<<<<<< HEAD
 ![](https://github.com/jmanueltorress/CRUD-MOVIES/blob/main/assets/demofinal.png)
+=======
+![](https://github.com/jmanueltorress/CRUD-MOVIES/blob/main/assets/demofinal.png)
+>>>>>>> b4a2fe06c6b92e950efb17d4681ae161740f7a53
