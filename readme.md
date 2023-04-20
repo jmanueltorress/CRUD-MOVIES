@@ -17,7 +17,7 @@ npm run dev
 
 
 ## Desktop Design
-![](https://github.githubassets.com/images/modules/logos_page/https://github.com/jmanueltorress/CRUD-MOVIES/tree/main/assets/ux-demo.png)
+![](https://github.com/jmanueltorress/CRUD-MOVIES/blob/main/assets/ux-demo.png)
 
 ## Prototype Final
-![](https://github.githubassets.com/images/modules/logos_page/https://github.com/jmanueltorress/CRUD-MOVIES/tree/main/assets/demofinal.png)
+![](https://github.com/jmanueltorress/CRUD-MOVIES/blob/main/assets/demofinal.png)
